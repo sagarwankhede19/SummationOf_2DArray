@@ -1,0 +1,65 @@
+// Summation of 2D Array 
+
+#include<stdio.h>
+void SumColumn(int [3][3]);
+void SumRow(int [3][3]);
+void main()
+{
+	int a[3][3];
+	int i,j;
+	printf("\nEnter Array : ");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+		printf("\n");
+		
+		}
+		printf("\n Array \n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d\t",a[i][j]);
+		}
+		printf("\n");
+		
+		}	
+		
+		
+		SumRow(a);
+		SumColumn(a);
+}
+void SumRow(int a[3][3])
+{
+	int s=0,i,j;
+	printf("\nSum Of Row and Columns Of Array elements\n\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d\t",a[i][j]);
+			s=s+a[i][j];
+		}
+		printf("%d\t\n",s);
+		s=0;
+	}
+}
+void SumColumn(int a[3][3])
+{
+	int t=0,s=0,i,j;
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			s=s+a[j][i];
+		}
+		t=t+s;
+		printf("%d\t",s);
+		s=0;
+	}
+	a[j][i]=t;
+	printf("%d\t\n\n",t);
+}
